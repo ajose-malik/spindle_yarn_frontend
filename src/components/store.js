@@ -35,6 +35,11 @@ class Store extends Component {
 			</div>
 
 			<div className="footer">
+        <ul className="footer-ul">
+          <li><a href="#">PLACEHOLDER</a></li>
+          <li><a href="#">PLACEHOLDER</a></li>
+          <li><a href="#">PLACEHOLDER</a></li>
+        </ul>
 			</div>
 		)
 	}
