@@ -4,6 +4,8 @@ import axios from 'axios';
 
 class ThriftWear extends Component {
 	state = {
+		name: '',
+
 		thriftwear: []
 	};
 
@@ -13,7 +15,7 @@ class ThriftWear extends Component {
 		});
 	};
 
-	handleSubmit = event => {
+	newItem = event => {
 		event.preventDefault();
 		axios.post('/thriftwear', this.state).then(response => {
 			this.getItems();
