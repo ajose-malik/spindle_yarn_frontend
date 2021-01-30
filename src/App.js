@@ -10,7 +10,7 @@ class App extends Component {
 	render = () => {
 		return (
 			<div clasName='App'>
-				return <Store store={store} />;
+				<Store store={store} />
 			</div>
 		);
 	};
