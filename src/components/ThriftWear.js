@@ -5,7 +5,6 @@ import axios from 'axios';
 class ThriftWear extends Component {
 	state = {
 		name: '',
-
 		thriftwear: []
 	};
 
