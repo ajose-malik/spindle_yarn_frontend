@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import Item from './components/Item';
-import axios from 'axios';
+import Store from './components/Store';
 
 class App extends Component {
+	state = {
+		store: [],
+		cart: []
+	};
+
 	render = () => {
 		return (
-			<div>
-				<Item />
+			<div clasName='App'>
+				<Store />
 			</div>
 		);
 	};
