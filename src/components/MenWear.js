@@ -9,7 +9,7 @@ class MenWear extends Component {
 
 	getItems = () => {
 		axios
-			.get('/menwear')
+			.get('https://git.heroku/spindlexyarn/menwear')
 			.then(response => this.setState({ menwear: response.data }))
 			.catch(error => console.error(error));
 	};
