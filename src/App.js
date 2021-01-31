@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import MenWear from './components/MenWear';
+import Store from './components/Store';
 
 class App extends Component {
-	// state = {
-	// 	store: [],
-	// 	cart: []
-	// };
+	state = {
+		store: [],
+		cart: []
+	};
 
 	render = () => {
 		return (
-			<div className='App'>
-				<MenWear />
+			<div clasName='App'>
+				<Store />
 			</div>
 		);
 	};
