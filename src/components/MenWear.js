@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Item from './components/Item';
+import Item from './Item';
 import axios from 'axios';
 
 class MenWear extends Component {
