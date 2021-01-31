@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Store from './components/ThriftWear';
+import MenWear from './components/MenWear';
 
 class App extends Component {
 	// state = {
@@ -9,8 +9,8 @@ class App extends Component {
 
 	render = () => {
 		return (
-			<div clasName='App'>
-				<ThriftWear />
+			<div className='App'>
+				<MenWear />
 			</div>
 		);
 	};
