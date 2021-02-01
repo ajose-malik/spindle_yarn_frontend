@@ -4,13 +4,13 @@ import axios from 'axios';
 
 class MenWear extends Component {
 	state = {
-		menwear: []
+		products: []
 	};
 
 	getItems = () => {
 		axios
-			.get('/menwear')
-			.then(response => this.setState({ menwear: response.data }))
+			.get('https://spindlexyarn.herokuapp.com/products')
+			.then(response => this.setState({ products: response.data }))
 			.catch(error => console.error(error));
 	};
 
@@ -21,8 +21,8 @@ class MenWear extends Component {
 	render = () => {
 		return (
 			<div>
-				{this.state.menwear.map(item => {
-					return <Item item={item} />;
+				{this.state.products.map(item => {
+					return <Item item={item.men} />;
 				})}
 			</div>
 		);

@@ -18,15 +18,15 @@ class Item extends Component {
 				{detail ? (
 					<div>
 						<img src={this.props.item.image}></img>
-						<h4>Name: {this.props.item.name}</h4>
-						<h4>Name: {this.props.item.price}</h4>
-						<h4>Name: {this.props.item.description}</h4>
+						<h4>{this.props.item.name}</h4>
+						<h4>{this.props.item.price}</h4>
+						<h4>{this.props.item.description}</h4>
 					</div>
 				) : (
 					<div>
 						<img src={this.props.item.image} onClick={this.detail}></img>
-						<h4>Name: {this.props.item.name}</h4>
-						<h4>Name: {this.props.item.price}</h4>
+						<h4>{this.props.item.name}</h4>
+						<h4>{this.props.item.price}</h4>
 					</div>
 				)}
 			</div>
