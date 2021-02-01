@@ -27,7 +27,6 @@ class MenWear extends Component {
 				page: 'index',
 				productId: id
 			});
-			console.log(id);
 		} else if (goto === 'detail') {
 			this.setState({
 				page: 'detail',

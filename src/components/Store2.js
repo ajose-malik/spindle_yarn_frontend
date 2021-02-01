@@ -33,18 +33,38 @@ class Store2 extends Component {
 		if (page === 'storefront') {
 			return (
 				<div>
-					<h1>Spindle & Yarn</h1>
 					<button onClick={() => this.setPage('men')}>MEN</button>
 					<button onClick={() => this.setPage('women')}>WOMEN</button>
 					<button onClick={() => this.setPage('thrift')}>THRIFT</button>
 				</div>
 			);
 		} else if (page === 'menwear') {
-			return <MenWear setPage={this.setPage} />;
+			return (
+				<div>
+					<button onClick={() => this.setPage('men')}>MEN</button>
+					<button onClick={() => this.setPage('women')}>WOMEN</button>
+					<button onClick={() => this.setPage('thrift')}>THRIFT</button>
+					<MenWear setPage={this.setPage} />
+				</div>
+			);
 		} else if (page === 'womenwear') {
-			return <WomenWear setPage={this.setPage} />;
+			return (
+				<div>
+					<button onClick={() => this.setPage('men')}>MEN</button>
+					<button onClick={() => this.setPage('women')}>WOMEN</button>
+					<button onClick={() => this.setPage('thrift')}>THRIFT</button>
+					<WomenWear setPage={this.setPage} />
+				</div>
+			);
 		} else if (page === 'thriftwear') {
-			return <ThriftWear setPage={this.setPage} />;
+			return (
+				<div>
+					<button onClick={() => this.setPage('men')}>MEN</button>
+					<button onClick={() => this.setPage('women')}>WOMEN</button>
+					<button onClick={() => this.setPage('thrift')}>THRIFT</button>
+					<ThriftWear setPage={this.setPage} />
+				</div>
+			);
 		}
 	};
 }
