@@ -1,38 +1,54 @@
 import React, { Component } from 'react';
+import '../store.css'
 
 class Store extends Component {
 	render = () => {
 		return (
       <div>
-      <h1>Spindle & Yarn</h1>
       <header>
         <div className="logo-container">
-          <a href="#">
-            <img src="spindle-and-yarn-logo.png"/>
-          </a>
+          <img src="spindle-and-yarn-logo.png"
+					className="logo-image"
+					alt="logo"/>
         </div>
-        <ul>
-          <li><a href="#">MENS</a></li>
-          <li><a href="#">WOMENS</a></li>
-          <li><a href="#">THRIFT ITEMS</a></li>
-        </ul>
       </header>
       <div className="container">
         <div className="content-box">
           <div className="mens">
-            <a href="#">
-              <img src="https://images.pexels.com/photos/3193731/pexels-photo-3193731.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"/>
-            </a>
+						<div className="shop-box-men">
+						<button>
+							<span className="line-1">SHOP</span>
+							<br/><br/>
+							<span className="line-2">MENS</span>
+							<span className="line-3"></span>
+						</button>
+              <img src="https://images.pexels.com/photos/3193731/pexels-photo-3193731.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+							className="store-image"/>
+							</div>
           </div>
           <div className="womens">
-            <a href="#">
-              <img src="https://images.pexels.com/photos/1075776/pexels-photo-1075776.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"/>
-            </a>
+						<div className="shop-box-women">
+						<button>
+							<span className="line-1">SHOP</span>
+							<br/><br/>
+							<span className="line-2">WOMENS</span>
+							<span className="line-3"></span>
+						</button>
+              <img src="https://images.pexels.com/photos/1075776/pexels-photo-1075776.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+							className="store-image"/>
+						</div>
           </div>
           <div className="thrift">
-            <a href="#">
-              <img src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"/>
-            </a>
+						<div className="shop-box-thrift">
+						<button>
+							<span className="line-1">SHOP</span>
+							<br/><br/>
+							<span className="line-2">THRIFT</span>
+							<span className="line-3"></span>
+						</button>
+							<img src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+							className="store-image"/>
+							</div>
           </div>
         </div>
       </div>

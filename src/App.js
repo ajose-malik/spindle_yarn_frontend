@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import MenWear from './components/MenWear';
-// import Store from './components/Store';
+// import MenWear from './components/MenWear';
+import Store from './components/Store';
 
 class App extends Component {
 	state = {
@@ -11,8 +11,8 @@ class App extends Component {
 	render = () => {
 		return (
 			<div className='App'>
-				{/* <Store /> */}
-				<MenWear />
+				<Store />
+				{/*<MenWear />*/}
 			</div>
 		);
 	};
