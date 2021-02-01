@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import Item from './components/Item';
+import Item from './Item';
 import axios from 'axios';
 
 class WomenWear extends Component {
 	state = {
-		womenwear: []
+		products: []
 	};
 
 	getItems = () => {
 		axios
-			.get('/womenwear')
-			.then(response => this.setState({ womenwear: response.data }))
+			.get('https://spindlexyarn.herokuapp.com/products')
+			.then(response => this.setState({ products: response.data }))
 			.catch(error => console.error(error));
 	};
 
@@ -21,8 +21,11 @@ class WomenWear extends Component {
 	render = () => {
 		return (
 			<div>
-				{this.state.womenwear.map(item => {
-					return <Item item={item} />;
+				<button onClick={() => this.props.setPage('storefront')}>Back</button>
+				{this.state.products.map(item => {
+					if (item.category === 'women') {
+						return <Item item={item} />;
+					}
 				})}
 			</div>
 		);

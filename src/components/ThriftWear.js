@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import ItemThrift from './components/ItemThrift';
+import ItemThrift from './ItemThrift';
 import axios from 'axios';
 
 class ThriftWear extends Component {
 	state = {
 		name: '',
-		thriftwear: []
+		products: []
 	};
 
 	handleChange = event => {
@@ -16,29 +16,37 @@ class ThriftWear extends Component {
 
 	newItem = event => {
 		event.preventDefault();
-		axios.post('/thriftwear', this.state).then(response => {
-			this.getItems();
-		});
+		axios
+			.post('https://spindlexyarn.herokuapp.com/products', this.state)
+			.then(response => {
+				this.getItems();
+			});
 	};
 
 	deleteItem = event => {
-		axios.delete('/thriftwear/' + event.target.value).then(response => {
-			this.getItems();
-		});
+		axios
+			.delete(
+				'https://spindlexyarn.herokuapp.com/products/' + event.target.value
+			)
+			.then(response => {
+				this.getItems();
+			});
 	};
 
 	updateItem = event => {
 		event.preventDefault();
 		const id = event.target.id;
-		axios.put('/thriftwear/' + id, this.state).then(response => {
-			this.getItems();
-		});
+		axios
+			.put('https://spindlexyarn.herokuapp.com/products/' + id, this.state)
+			.then(response => {
+				this.getItems();
+			});
 	};
 
 	getItems = () => {
 		axios
-			.get('/thriftwear')
-			.then(response => this.setState({ thriftwear: response.data }))
+			.get('https://spindlexyarn.herokuapp.com/products')
+			.then(response => this.setState({ products: response.data }))
 			.catch(error => console.error(error));
 	};
 
@@ -49,8 +57,11 @@ class ThriftWear extends Component {
 	render = () => {
 		return (
 			<div>
-				{this.state.thriftwear.map(item => {
-					return <ItemThrift item={item} />;
+				<button onClick={() => this.props.setPage('storefront')}>Back</button>
+				{this.state.products.map(item => {
+					if (item.category === 'thrift') {
+						return <ItemThrift item={item} />;
+					}
 				})}
 			</div>
 		);

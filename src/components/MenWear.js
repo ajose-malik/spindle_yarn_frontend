@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import Item from './Item';
+import ItemDetail from './ItemDetail';
 import axios from 'axios';
 
 class MenWear extends Component {
 	state = {
-		products: []
+		products: [],
+		page: 'index',
+		productId: null
 	};
 
 	getItems = () => {
@@ -18,16 +21,45 @@ class MenWear extends Component {
 		this.getItems();
 	};
 
+	showDetail = (goto, id = null) => {
+		if (goto === 'index') {
+			this.setState({
+				page: 'index',
+				productId: id
+			});
+			console.log(id);
+		} else if (goto === 'detail') {
+			this.setState({
+				page: 'detail',
+				productId: id
+			});
+		}
+	};
+
 	render = () => {
-		return (
-			<div>
-				{this.state.products.map(item => {
-					if (item.category === 'men') {
-						return <Item item={item} />;
-					}
-				})}
-			</div>
-		);
+		const { page } = this.state;
+		if (page === 'index') {
+			return (
+				<div>
+					<button onClick={() => this.props.setPage('storefront')}>Back</button>
+					{this.state.products.map(item => {
+						if (item.category === 'men') {
+							return <Item item={item} showDetail={this.showDetail} />;
+						}
+					})}
+				</div>
+			);
+		} else if (page === 'detail') {
+			return (
+				<div>
+					{this.state.products.map(item => {
+						if (item.id === this.state.productId) {
+							return <ItemDetail item={item} showDetail={this.showDetail} />;
+						}
+					})}
+				</div>
+			);
+		}
 	};
 }
 
