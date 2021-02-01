@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MenWear from './components/MenWear';
 // import Store from './components/Store';
 
 class App extends Component {
@@ -8,7 +9,12 @@ class App extends Component {
 	};
 
 	render = () => {
-		return <div className='App'>{/* <Store /> */}</div>;
+		return (
+			<div className='App'>
+				{/* <Store /> */}
+				<MenWear />
+			</div>
+		);
 	};
 }
 

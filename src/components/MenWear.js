@@ -22,7 +22,9 @@ class MenWear extends Component {
 		return (
 			<div>
 				{this.state.products.map(item => {
-					return <Item item={item.men} />;
+					if (item.category === 'men') {
+						return <Item item={item} />;
+					}
 				})}
 			</div>
 		);
