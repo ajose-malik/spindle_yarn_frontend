@@ -33,12 +33,12 @@ class ItemThriftDetail extends Component {
 	};
 
 	updateItem = id => {
-		axios
-			.put('https://spindlexyarn.herokuapp.com/products/' + id, this.state)
-			.then(response => {
-				// this.props.getItems();
-				console.log('updated');
-			});
+		// axios
+		// .put('https://spindlexyarn.herokuapp.com/products/' + id, this.state)
+		// .then(response => {
+		// 	// this.props.getItems();
+		// });
+		console.log('updated');
 		// this.setState({
 		// 	page: 'detail',
 		// 	productId: id
