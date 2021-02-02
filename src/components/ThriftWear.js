@@ -1,46 +1,13 @@
 import React, { Component } from 'react';
 import ItemThrift from './ItemThrift';
+import ItemThriftDetail from './ItemThriftDetail';
 import axios from 'axios';
 
 class ThriftWear extends Component {
 	state = {
-		name: '',
-		products: []
-	};
-
-	handleChange = event => {
-		this.setState({
-			[event.target.id]: event.target.value
-		});
-	};
-
-	newItem = event => {
-		event.preventDefault();
-		axios
-			.post('https://spindlexyarn.herokuapp.com/products', this.state)
-			.then(response => {
-				this.getItems();
-			});
-	};
-
-	deleteItem = event => {
-		axios
-			.delete(
-				'https://spindlexyarn.herokuapp.com/products/' + event.target.value
-			)
-			.then(response => {
-				this.getItems();
-			});
-	};
-
-	updateItem = event => {
-		event.preventDefault();
-		const id = event.target.id;
-		axios
-			.put('https://spindlexyarn.herokuapp.com/products/' + id, this.state)
-			.then(response => {
-				this.getItems();
-			});
+		products: [],
+		page: 'index',
+		productId: null
 	};
 
 	getItems = () => {
@@ -54,17 +21,46 @@ class ThriftWear extends Component {
 		this.getItems();
 	};
 
+	showDetail = (goto, id = null) => {
+		if (goto === 'index') {
+			this.setState({
+				page: 'index',
+				productId: id
+			});
+		} else if (goto === 'detail') {
+			this.setState({
+				page: 'detail',
+				productId: id
+			});
+		}
+	};
+
 	render = () => {
-		return (
-			<div>
-				<button onClick={() => this.props.setPage('storefront')}>Back</button>
-				{this.state.products.map(item => {
-					if (item.category === 'thrift') {
-						return <ItemThrift item={item} />;
-					}
-				})}
-			</div>
-		);
+		const { page } = this.state;
+		if (page === 'index') {
+			return (
+				<div>
+					<button onClick={() => this.props.setPage('storefront')}>Back</button>
+					{this.state.products.map(item => {
+						if (item.category === 'thrift') {
+							return <ItemThrift item={item} showDetail={this.showDetail} />;
+						}
+					})}
+				</div>
+			);
+		} else if (page === 'detail') {
+			return (
+				<div>
+					{this.state.products.map(item => {
+						if (item.id === this.state.productId) {
+							return (
+								<ItemThriftDetail item={item} showDetail={this.showDetail} />
+							);
+						}
+					})}
+				</div>
+			);
+		}
 	};
 }
 
