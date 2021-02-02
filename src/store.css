@@ -1,0 +1,51 @@
+* {
+  background: #f8f8f8;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.store-ul {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+a {
+  font-size: 32px;
+  color: grey;
+}
+
+.content-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.shop-box-men, .shop-box-women, .shop-box-thrift {
+  position: relative;
+  width: 100%
+}
+
+.store-image {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  position: absolute;
+  top: 3%;
+  left: 5%;
+  width: 90%;
+  padding: 1em;
+  font-family: 'Roboto',sans-serif;
+  color: black;
+  font-size: 36px;
+  text-align: center;
+}
+
+button:hover {
+  cursor: pointer;
+}
