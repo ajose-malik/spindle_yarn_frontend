@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class ItemThriftDetail extends Component {
-	state = {};
+	state = {
+		image: this.props.item.image,
+		name: this.props.item.name,
+		price: this.props.item.price,
+		description: this.props.item.description,
+		category: this.props.item.category
+	};
 
 	handleChange = event => {
 		this.setState({
@@ -10,43 +16,40 @@ class ItemThriftDetail extends Component {
 		});
 	};
 
-	newItem = event => {
-		event.preventDefault();
+	newItem = () => {
 		axios
-			.post('https://spindlexyarn.herokuapp.com/products', this.state)
+			.post('https://spindlexyarn.herokuapp.com/products', {
+				...this.state
+			})
 			.then(response => {
-				// this.getItems();
-				console.log('created');
+				this.props.getItems();
 			});
+		this.props.showDetail('index');
 	};
 
-	deleteItem = id => {
+	deleteItem = () => {
+		const { id } = this.props.item;
 		axios
 			.delete('https://spindlexyarn.herokuapp.com/products/' + id)
 			.then(response => {
-				// this.getItems();
-				console.log('deleted');
+				this.props.getItems();
 			});
-		// this.setState({
-		// 	page: 'index'
-		// });
+		this.props.showDetail('index');
 	};
 
-	updateItem = id => {
-		// axios
-		// .put('https://spindlexyarn.herokuapp.com/products/' + id, this.state)
-		// .then(response => {
-		// 	// this.props.getItems();
-		// });
-		console.log('updated');
-		// this.setState({
-		// 	page: 'detail',
-		// 	productId: id
-		// });
+	updateItem = () => {
+		const { id } = this.props.item;
+		axios
+			.put('https://spindlexyarn.herokuapp.com/products/' + id, {
+				...this.state
+			})
+			.then(response => {
+				this.props.getItems();
+			});
+		this.props.showDetail('index');
 	};
 
 	render = () => {
-		const id = this.props.item.id;
 		return (
 			<div>
 				<button onClick={() => this.props.showDetail('index')}>Index</button>
@@ -54,10 +57,10 @@ class ItemThriftDetail extends Component {
 				<h4>{this.props.item.name}</h4>
 				<h4>{this.props.item.price}</h4>
 				<h4>{this.props.item.description}</h4>
-				<button onClick={this.deleteItem(id)}>X</button>
-				<div>
-					<h2>Edit Item</h2>
-					<form onSubmit={this.updateItem(id)}>
+				<button onClick={this.deleteItem}>X</button>
+				<details>
+					<summary>Update Item</summary>
+					<form onSubmit={this.updateItem}>
 						<label htmlFor='name'>Name</label>
 						<input
 							type='text'
@@ -100,10 +103,11 @@ class ItemThriftDetail extends Component {
 						<br />
 						<input type='submit' value='Update Item' />
 					</form>
-				</div>
-				{/* <div>
-					<h2>New Item</h2>
-					<form id={this.props.item.id} onSubmit={this.newItem}>
+				</details>
+
+				<details>
+					<summary>Add Items</summary>
+					<form onSubmit={this.newItem}>
 						<label htmlFor='name'>Name</label>
 						<input type='text' id='name' onChange={this.handleChange} />
 						<br />
@@ -116,9 +120,12 @@ class ItemThriftDetail extends Component {
 						<label htmlFor='image'>Image URL</label>
 						<input type='text' id='image' onChange={this.handleChange} />
 						<br />
-						<input type='submit' value='Create Item' />
+						<label htmlFor='image'>Category</label>
+						<input type='text' id='category' onChange={this.handleChange} />
+						<br />
+						<input type='submit' value='Add Item' />
 					</form>
-				</div> */}
+				</details>
 			</div>
 		);
 	};
