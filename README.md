@@ -8,4 +8,4 @@ Spindle & Yarn is a trendy online store. Browse through our Mens and Womens sect
 
 
 ### Technologies:
-The store is a full CRUD single page application  built with CSS, Materialize, React.js, Ruby on Rails, PostgreSQL!
+The store is a full CRUD single page application  built with CSS, Materialize, React.js, Ruby on Rails, PostgreSQL.
