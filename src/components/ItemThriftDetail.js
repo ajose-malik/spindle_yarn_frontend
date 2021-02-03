@@ -18,11 +18,13 @@ class ItemThriftDetail extends Component {
 
 	newItem = () => {
 		axios
-			.post('https://spindlexyarn.herokuapp.com/products', this.state)
+			.post('https://spindlexyarn.herokuapp.com/products', {
+				...this.state
+			})
 			.then(response => {
-				// this.getItems();
-				console.log('created');
+				this.props.getItems();
 			});
+		this.props.showDetail('index');
 	};
 
 	deleteItem = () => {
@@ -56,8 +58,8 @@ class ItemThriftDetail extends Component {
 				<h4>{this.props.item.price}</h4>
 				<h4>{this.props.item.description}</h4>
 				<button onClick={this.deleteItem}>X</button>
-				<div>
-					<h2>Edit Item</h2>
+				<details>
+					<summary>Update Item</summary>
 					<form onSubmit={this.updateItem}>
 						<label htmlFor='name'>Name</label>
 						<input
@@ -101,10 +103,11 @@ class ItemThriftDetail extends Component {
 						<br />
 						<input type='submit' value='Update Item' />
 					</form>
-				</div>
-				{/* <div>
-					<h2>New Item</h2>
-					<form id={this.props.item.id} onSubmit={this.newItem}>
+				</details>
+
+				<details>
+					<summary>Add Items</summary>
+					<form onSubmit={this.newItem}>
 						<label htmlFor='name'>Name</label>
 						<input type='text' id='name' onChange={this.handleChange} />
 						<br />
@@ -117,9 +120,12 @@ class ItemThriftDetail extends Component {
 						<label htmlFor='image'>Image URL</label>
 						<input type='text' id='image' onChange={this.handleChange} />
 						<br />
-						<input type='submit' value='Create Item' />
+						<label htmlFor='image'>Category</label>
+						<input type='text' id='category' onChange={this.handleChange} />
+						<br />
+						<input type='submit' value='Add Item' />
 					</form>
-				</div> */}
+				</details>
 			</div>
 		);
 	};

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Store2 from './components/Store2';
+import Store from './components/Store';
 
 class App extends Component {
 	state = {
@@ -18,7 +18,7 @@ class App extends Component {
 						/>
 					</div>
 				</header>
-				<Store2 />
+				<Store />
 				<footer className='page-footer grey'>
 					<div className='container'>
 						<div className='row'>
