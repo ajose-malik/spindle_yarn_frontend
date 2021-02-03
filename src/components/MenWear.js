@@ -40,12 +40,23 @@ class MenWear extends Component {
 		if (page === 'index') {
 			return (
 				<div>
-					<button onClick={() => this.props.setPage('storefront')}>Back</button>
+				<div>
+				<button onClick={() => this.props.setPage('storefront')}>Back</button>
+				</div>
+				<div className="row">
+
+
 					{this.state.products.map(item => {
 						if (item.category === 'men') {
-							return <Item item={item} showDetail={this.showDetail} />;
+							return(
+								<div className="col s4">
+								<Item item={item} showDetail={this.showDetail} />
+								</div>
+							)
 						}
 					})}
+
+				</div>
 				</div>
 			);
 		} else if (page === 'detail') {

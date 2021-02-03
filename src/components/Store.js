@@ -34,51 +34,23 @@ class Store extends Component {
 		const { page } = this.state;
 		if (page === 'storefront') {
 			return (
-				<div>
+
 					<div className="container">
-						<div className="content-box">
-						
-							<div className="mens">
-								<div className="shop-box-men">
-								<button onClick={() => this.setPage('men')}>
-									<span className="line-1">SHOP</span>
-									<br/><br/>
-									<span className="line-2">MENS</span>
-									<span className="line-3"></span>
-								</button>
-									<img src="https://images.pexels.com/photos/3193731/pexels-photo-3193731.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-									className="store-image" alt="mens"/>
-								</div>
-							</div>
+						<div className="row">
+							<img className="col s12 m4" src="https://images.pexels.com/photos/3193731/pexels-photo-3193731.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+							onClick={() => this.setPage('men')}
+							alt="mens"/>
 
-							<div className="womens">
-								<div className="shop-box-women">
-								<button onClick={() => this.setPage('women')}>
-									<span className="line-1">SHOP</span>
-									<br/><br/>
-									<span className="line-2">WOMENS</span>
-									<span className="line-3"></span>
-								</button>
-									<img src="https://images.pexels.com/photos/1075776/pexels-photo-1075776.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-									className="store-image" alt="womens"/>
-								</div>
-							</div>
+							<img className="col s12 m4" src="https://images.pexels.com/photos/1075776/pexels-photo-1075776.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+							onClick={() => this.setPage('women')}
+							alt="womens"/>
 
-							<div className="thrift">
-								<div className="shop-box-thrift">
-								<button onClick={() => this.setPage('thrift')}>
-									<span className="line-1">SHOP</span>
-									<br/><br/>
-									<span className="line-2">THRIFT</span>
-									<span className="line-3"></span>
-								</button>
-									<img src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-									className="store-image" alt="thrift"/>
-								</div>
-							</div>
+							<img  className="col s12 m4" src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+							onClick={() => this.setPage('thrift')}
+							alt="thrift"/>
 						</div>
 					</div>
-				</div>
+
 			);
 		} else if (page === 'menwear') {
 			return (

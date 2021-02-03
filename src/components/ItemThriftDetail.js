@@ -100,7 +100,7 @@ class ItemThriftDetail extends Component {
 						<br />
 						<input type='submit' value='Update Item' />
 					</form>
-				</div>
+			</div>
 				{/* <div>
 					<h2>New Item</h2>
 					<form id={this.props.item.id} onSubmit={this.newItem}>

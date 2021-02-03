@@ -22,7 +22,8 @@ class App extends Component {
 						<div className="row">
 							<div className="col l6 s12">
 								<h5 className="white-text">About Us</h5>
-								<p className="grey-text text-lighten-4">We can write something about what Spindle & Yarn is.</p>
+								<p className="grey-text text-lighten-4">We are passionate about what fashion can do</p>
+								<p classname="grey-text text-lighten-4">We are celebrating the creative minds behind the products</p>
 							</div>
 							<div className="col l4 offset-l2 s12">
 								<h4 className="white-text">Developers</h4>
@@ -37,7 +38,6 @@ class App extends Component {
 					<div className="footer-copyright">
 						<div className="container">
 						© 2021 Spindle & Yarn
-						<a className="grey-text text-lighten-4 right" href="#!">Shopping Cart</a>
 						</div>
 					</div>
 				</footer>
