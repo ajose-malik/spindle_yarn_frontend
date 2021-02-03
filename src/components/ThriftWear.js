@@ -24,8 +24,7 @@ class ThriftWear extends Component {
 	showDetail = (goto, id = null) => {
 		if (goto === 'index') {
 			this.setState({
-				page: 'index',
-				productId: id
+				page: 'index'
 			});
 		} else if (goto === 'detail') {
 			this.setState({
@@ -54,7 +53,11 @@ class ThriftWear extends Component {
 					{this.state.products.map(item => {
 						if (item.id === this.state.productId) {
 							return (
-								<ItemThriftDetail item={item} showDetail={this.showDetail} />
+								<ItemThriftDetail
+									item={item}
+									showDetail={this.showDetail}
+									getItems={this.getItems}
+								/>
 							);
 						}
 					})}

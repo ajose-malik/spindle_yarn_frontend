@@ -2,11 +2,6 @@ body {
   background: #f8f8f8;
 }
 
-.logo-container {
-  display: flex;
-  justify-content: center;
-}
-
 a {
   font-size: 32px;
   color: grey;
@@ -14,4 +9,14 @@ a {
 
 img {
   cursor: pointer;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-image {
+  height: 300px;
+  width: auto;
 }
