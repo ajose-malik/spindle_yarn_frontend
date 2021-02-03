@@ -1,4 +1,4 @@
-# Spindle & Yarn
+# Spindle & Yarn🧶
 #### Built by: Malik Ajose, Noel Rodriguez  & Ryan Klintworth
 
 ---
