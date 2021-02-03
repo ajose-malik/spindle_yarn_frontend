@@ -39,13 +39,18 @@ class ThriftWear extends Component {
 		if (page === 'index') {
 			return (
 				<div>
-					<button onClick={() => this.props.setPage('storefront')}>Back</button>
+					<div className="row">
 					{this.state.products.map(item => {
 						if (item.category === 'thrift') {
-							return <ItemThrift item={item} showDetail={this.showDetail} />;
+							return(
+								<div className="col s4">
+								<ItemThrift item={item} showDetail={this.showDetail} />
+								</div>
+							)
 						}
 					})}
 				</div>
+			</div>
 			);
 		} else if (page === 'detail') {
 			return (

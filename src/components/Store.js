@@ -4,6 +4,7 @@ import WomenWear from './WomenWear';
 import ThriftWear from './ThriftWear';
 import '../store.css'
 
+
 class Store extends Component {
 
 	state = {
