@@ -40,12 +40,17 @@ class WomenWear extends Component {
 		if (page === 'index') {
 			return (
 				<div>
-					<button onClick={() => this.props.setPage('storefront')}>Back</button>
-					{this.state.products.map(item => {
-						if (item.category === 'women') {
-							return <Item item={item} showDetail={this.showDetail} />;
-						}
-					})}
+					<div className="row">
+						{this.state.products.map(item => {
+							if (item.category === 'women') {
+								return(
+									<div className="col s4 m4">
+									<Item item={item} showDetail={this.showDetail} />
+									</div>
+								)
+							}
+						})}
+					</div>
 				</div>
 			);
 		} else if (page === 'detail') {

@@ -24,9 +24,7 @@ class App extends Component {
 									</a>
 								</li>
 								<li>
-									<a
-										href='badges.html'
-										onClick={() => this.props.setPage('men')}>
+									<a href='sass.html' onClick={() => this.props.setPage('men')}>
 										Mens
 									</a>
 								</li>
