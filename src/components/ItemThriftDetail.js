@@ -51,13 +51,22 @@ class ItemThriftDetail extends Component {
 
 	render = () => {
 		return (
-			<div>
-				<button onClick={() => this.props.showDetail('index')}>Index</button>
-				<img src={this.props.item.image}></img>
-				<h4>{this.props.item.name}</h4>
-				<h4>{this.props.item.price}</h4>
-				<h4>{this.props.item.description}</h4>
-				<button onClick={this.deleteItem}>X</button>
+			<div className="container">
+				<div className="row">
+				<button onClick={() => this.props.showDetail('index')}
+				class="btn #9e9e9e blue-grey lighten-5 #9e9e9e blue-grey-text text-darken-2 waves-effect waves-light">BACK
+					<i class="material-icons right">arrow_back</i>
+				</button>
+				<img className="col s8" src={this.props.item.image}></img>
+				<h5>{this.props.item.name}</h5>
+				<h5>{this.props.item.price}</h5>
+				<div class="divider"></div>
+				<h6>{this.props.item.description}</h6>
+				<div class="divider"></div>
+				<div class="section">
+				<button onClick={this.deleteItem} class="btn disabled #9e9e9e blue-grey lighten-5 #9e9e9e blue-grey-text text-darken-2 waves-effect waves-light">DELETE
+					<i class="material-icons right">close</i></button>
+				</div>
 				<details>
 					<summary>Update Item</summary>
 					<form onSubmit={this.updateItem}>
@@ -101,7 +110,10 @@ class ItemThriftDetail extends Component {
 							onChange={this.handleChange}
 						/>
 						<br />
+						<div class="btn blue-grey lighten-5">
+						<span></span>
 						<input type='submit' value='Update Item' />
+						</div>
 					</form>
 				</details>
 
@@ -123,9 +135,13 @@ class ItemThriftDetail extends Component {
 						<label htmlFor='image'>Category</label>
 						<input type='text' id='category' onChange={this.handleChange} />
 						<br />
+						<div class="btn blue-grey lighten-5">
+						<span></span>
 						<input type='submit' value='Add Item' />
+						</div>
 					</form>
 				</details>
+			</div>
 			</div>
 		);
 	};

@@ -15,7 +15,7 @@ class App extends Component {
 		        <a href="#!" class="brand-logo">Spindle & Yarn</a>
 		        <ul class="right hide-on-med-and-down">
 		          <li><a href="sass.html" onClick={() => this.props.setPage('storefront')}>Home</a></li>
-		          <li><a href="badges.html"onClick={() => this.props.setPage('men')}>Mens</a></li>
+		          <li><a href="sass.html" onClick={() => this.props.setPage('men')}>Mens</a></li>
 							<li><a href="badges.html">Womens</a></li>
 							<li><a href="badges.html">Thrift</a></li>
 		        </ul>
