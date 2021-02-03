@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import MenWear from './MenWear';
 import WomenWear from './WomenWear';
 import ThriftWear from './ThriftWear';
-import '../store.css'
 
-
-class Store extends Component {
-
+class Store2 extends Component {
 	state = {
 		page: 'storefront'
 	};
@@ -35,40 +32,40 @@ class Store extends Component {
 		const { page } = this.state;
 		if (page === 'storefront') {
 			return (
-				<div className="row">
-					<img className="col s12 m4" src="https://images.pexels.com/photos/3193731/pexels-photo-3193731.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-					onClick={() => this.setPage('men')}
-					alt="mens"/>
-
-					<img className="col s12 m4" src="https://images.pexels.com/photos/1075776/pexels-photo-1075776.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-					onClick={() => this.setPage('women')}
-					alt="womens"/>
-
-					<img  className="col s12 m4" src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-					onClick={() => this.setPage('thrift')}
-					alt="thrift"/>
+				<div>
+					<button onClick={() => this.setPage('men')}>MEN</button>
+					<button onClick={() => this.setPage('women')}>WOMEN</button>
+					<button onClick={() => this.setPage('thrift')}>THRIFT</button>
 				</div>
 			);
 		} else if (page === 'menwear') {
 			return (
 				<div>
+					<button onClick={() => this.setPage('men')}>MEN</button>
+					<button onClick={() => this.setPage('women')}>WOMEN</button>
+					<button onClick={() => this.setPage('thrift')}>THRIFT</button>
 					<MenWear setPage={this.setPage} />
 				</div>
 			);
 		} else if (page === 'womenwear') {
 			return (
 				<div>
+					<button onClick={() => this.setPage('men')}>MEN</button>
+					<button onClick={() => this.setPage('women')}>WOMEN</button>
+					<button onClick={() => this.setPage('thrift')}>THRIFT</button>
 					<WomenWear setPage={this.setPage} />
 				</div>
 			);
 		} else if (page === 'thriftwear') {
 			return (
 				<div>
+					<button onClick={() => this.setPage('men')}>MEN</button>
+					<button onClick={() => this.setPage('women')}>WOMEN</button>
+					<button onClick={() => this.setPage('thrift')}>THRIFT</button>
 					<ThriftWear setPage={this.setPage} />
 				</div>
 			);
 		}
 	};
 }
-
-export default Store;
+export default Store2;
