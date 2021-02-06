@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch, NavLink } from 'react-router-dom';
 import Store from './Store';
 import MenWear from './MenWear';
 import WomenWear from './WomenWear';
 import ThriftWear from './ThriftWear';
+import '../store.css';
 
 class Item extends Component {
 	render = () => {
@@ -11,22 +12,28 @@ class Item extends Component {
 			<div className='App'>
 				<div class='navbar-fixed'>
 					<nav>
-						<div class='nav-wrapper #9e9e9e blue-grey lighten-2'>
+						<div className='nav-wrapper #9e9e9e blue-grey lighten-2'>
 							<a href='/' class='brand-logo'>
 								Spindle & Yarn
 							</a>
-							<ul class='right hide-on-med-and-down'>
+							<ul className='right hide-on-med-and-down'>
 								<li>
-									<Link to='/'>Home</Link>
+									<NavLink to='/'>Home</NavLink>
 								</li>
 								<li>
-									<Link to='/men'>Men</Link>
+									<NavLink activeClassName='nav' to='/men'>
+										Men
+									</NavLink>
 								</li>
 								<li>
-									<Link to='/women'>Women</Link>
+									<NavLink activeClassName='nav' to='/women'>
+										Women
+									</NavLink>
 								</li>
 								<li>
-									<Link to='/thrift'>Thrift</Link>
+									<NavLink activeClassName='nav' to='/thrift'>
+										Thrift
+									</NavLink>
 								</li>
 							</ul>
 						</div>
