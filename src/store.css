@@ -1,0 +1,22 @@
+body {
+  background: #f8f8f8;
+}
+
+a {
+  font-size: 32px;
+  color: grey;
+}
+
+img {
+  cursor: pointer;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-image {
+  height: 300px;
+  width: auto;
+}
